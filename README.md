@@ -1,156 +1,91 @@
-Customer Churn Prediction using Decision Tree
-Overview
+🌳 Customer Churn Prediction
 
-This project predicts whether a customer is likely to leave a bank using a Decision Tree Classifier built with Scikit-Learn.
+A Machine Learning project that predicts whether a customer is likely to leave a bank using a Decision Tree Classifier.
 
-The goal is to identify customers at risk of churn so that businesses can take preventive actions and improve customer retention.
+🎯 Objective
 
-This project was completed as part of my Machine Learning learning journey and focuses on the complete ML workflow, including data preprocessing, feature engineering, model training, evaluation, and hyperparameter tuning.
+Customer churn is a major challenge for businesses. The goal of this project is to identify customers who are likely to leave so that retention strategies can be applied proactively.
 
-Dataset
-
-The dataset contains customer information such as:
-
-Credit Score
-Geography
-Gender
-Age
-Tenure
-Balance
-Number of Products
-Has Credit Card
-Is Active Member
-Estimated Salary
-Target Variable
-Plain Text
-Exited
- 
-0 = Customer Stayed
-1 = Customer Churned
-Show more lines
-Data Preprocessing
+🛠️ Tech Stack
+Python
+Pandas
+NumPy
+Scikit-Learn
+📊 Data Preparation
 
 The following preprocessing steps were performed:
 
-Removed unnecessary identifier columns:
+✅ Removed irrelevant identifiers
 
 RowNumber
 CustomerId
 Surname
 
-Removed potential data leakage features:
+✅ Removed potential leakage features
 
 Complain
 Satisfaction Score
 
-Checked for:
+✅ Checked for
 
 Missing values
 Duplicate records
 
-Applied One-Hot Encoding to categorical features using:
+✅ Applied One-Hot Encoding to categorical variables
 
-Python
-pd.get_dummies()
-Show more lines
-Model
+🤖 Model
 
-A Decision Tree Classifier was used with the following parameters:
+Decision Tree Classifier
 
-Python
 DecisionTreeClassifier(
-max_depth=6,
-criterion="entropy",
-min_samples_split=50,
-min_samples_leaf=20,
-class_weight={0:1, 1:2.96},
-random_state=42
+    max_depth=6,
+    criterion="entropy",
+    min_samples_split=50,
+    min_samples_leaf=20,
+    class_weight={0:1, 1:2.96},
+    random_state=42
 )
-Show more lines
-Why these settings?
 
-max_depth=6
 
-Reduces overfitting
+Model tuning focused on reducing overfitting and improving churn detection.
 
-min_samples_split=50
+📈 Results
+Cross Validation Score
+78.93%
 
-Prevents unnecessary splits
-
-min_samples_leaf=20
-
-Avoids very small leaf nodes
-
-class_weight
-
-Helps address class imbalance in churn prediction
-Model Evaluation
-Cross Validation
-Plain Text
-Cross Validation Accuracy: 78.93%
-Show more lines
 Test Accuracy
-Plain Text
-Accuracy: 77.15%
-Show more lines
+77.15%
+
+Classification Metrics
+Metric	Churn Class (1)Precision	0.46
+Recall	0.79
+F1 Score	0.58
 Confusion Matrix
-Plain Text
 [[1221 371]
-[ 86 322]]
-Show more lines
-Classification Report
-Plain Text
-Class 0 (Not Churn)
- 
-Precision: 0.93
-Recall: 0.77
-F1-Score: 0.84
- 
-Class 1 (Churn)
- 
-Precision: 0.46
-Recall: 0.79
-F1-Score: 0.58
-Show more lines
-ROC-AUC
+ [  86 322]]
 
-ROC-AUC was also used to evaluate the model's ability to distinguish between churned and non-churned customers.
 
-Python
-roc_auc_score(y_test, probabilities)
-Show more lines
-Key Learning Outcomes
+The model prioritizes recall, meaning it successfully identifies most customers who are likely to churn.
 
-Through this project I learned:
-
-Data preprocessing
-Feature selection
-One-hot encoding
-Detecting and removing data leakage
-Decision Trees
-Hyperparameter tuning
-Cross Validation
-Confusion Matrix interpretation
-Precision, Recall, and F1 Score
-Handling imbalanced datasets
-
-One of the most important lessons from this project was learning that very high accuracy can sometimes indicate data leakage rather than a genuinely good model.
-
-Technologies Used
-Python
-Pandas
-NumPy
-Scikit-Learn
-Future Improvements
-Compare results with Random Forest
-Compare against Logistic Regression
-Perform Grid Search for hyperparameter tuning
-Improve churn prediction recall and F1 score
-Create visualizations and dashboards
-Author
+💡 Key Takeaways
+Built a complete ML pipeline from preprocessing to evaluation.
+Learned how to detect and remove data leakage.
+Used stratified train-test splitting.
+Applied cross-validation.
+Worked with imbalanced data using class weights.
+Evaluated performance beyond accuracy using Precision, Recall, F1-Score, and ROC-AUC.
+🚀 Future Improvements
+Random Forest Classifier
+XGBoost
+Hyperparameter optimization
+Feature importance visualization
+Interactive dashboard
+👨‍💻 Author
 
 Awais Ali
 
 First-Year BS Artificial Intelligence Student
 
-Learning Machine Learning through hands-on projects and experimentation. 🚀
+Learning Machine Learning through hands-on projects and real-world datasets.
+
+This style is much closer to what you'd typically see in strong student GitHub repositories: concise, readable, and focused on outcomes rather than explaining every concept.
