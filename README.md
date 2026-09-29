@@ -1,4 +1,4 @@
-ustomer Churn Prediction using Decision Tree
+Customer Churn Prediction using Decision Tree
 Overview
 
 This project predicts whether a customer is likely to leave a bank using a Decision Tree Classifier built with Scikit-Learn.
